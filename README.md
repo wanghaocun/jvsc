@@ -4,9 +4,9 @@
 
 *toc:*
 
-| name | means       | relations |
-| ---- | ----------- | --------- |
-| p1m1 | persistence | mybatis   |
-|      |             |           |
-|      |             |           |
+| name | means       | relations          |
+| ---- | ----------- | ------------------ |
+| p1m1 | persistence | mybatis            |
+| p1m2 | spring      | ioc/aop/annotation |
+|      |             |                    |
 
