@@ -1,0 +1,15 @@
+# MySQL数据库连接配置
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog_system
+    username: root
+    password: 123456
+  # thymeleaf页面缓存设置（默认为true），开发中方便调试应设置为false，上线稳定后应保持默认true
+  thymeleaf:
+    cache: false
+
+# 数据库分页插件的方言设置
+pagehelper:
+  helper-dialect: mysql
