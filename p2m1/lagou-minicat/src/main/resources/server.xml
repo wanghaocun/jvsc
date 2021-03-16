@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Server>
+    <Service>
+        <Connector port="8080"/>
+        <Engine>
+            <Host name="localhost" appBase="C:\Users\wanghc\Downloads\Edge\lagou-minicat\webapps">
+                <Context name="/demo1" path="webapp1/demo"/>
+                <Context name="/demo2" path="webapp2/demo"/>
+            </Host>
+        </Engine>
+    </Service>
+</Server>
