@@ -1,0 +1,41 @@
+spring:
+  rabbitmq:
+#    host: localhost
+    host: 192.168.0.220
+#    port: 5673
+    port: 5672
+    username: guest
+    password: guest
+    publisher-returns: true
+    publisher-confirm-type: simple
+    template:
+      mandatory: true
+      retry:
+        enabled: true
+    listener:
+      type: simple
+      simple:
+        prefetch: 5
+        concurrency: 5
+        max-concurrency: 50
+        acknowledge-mode: manual
+        retry:
+          enabled: true
+
+#      direct:
+#        acknowledge-mode: manual
+#        retry:
+#          enabled: true
+
+# rabbitmq direct消息队列配置
+mq:
+  # 通用交换机
+  exchange: lz-file-parsing
+  # 生产者
+  publish:
+    routing: source-document-routing
+    queue: source-document-queue
+  # 消费者
+  subscribe:
+    routing: parsing-result-routing
+    queue: parsing-result-queue
