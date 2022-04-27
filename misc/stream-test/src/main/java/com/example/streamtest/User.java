@@ -22,8 +22,8 @@ public class User {
     private int age;
 
     /**
-     * optional是final类 没有任何继承和实现 设计时就不打算作为类字段使用
-     * 所以如果序列化类就会出现问题  可以采用替换策略
+     * optional是final类 没有任何继承和实现 所以如果序列化类就会出现问题
+     * optional在设计的时候就没有考虑将它作为类的字段使用 可以采用替换策略
      *
      *     private long phone;
      *     public Optional<Long> getPhone() {
