@@ -1,6 +1,7 @@
 package com.example.streamtest;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class StreamOperate {
 
@@ -35,6 +36,14 @@ public class StreamOperate {
         max(numbers);
         summaryStatistics(numbers);
 
+        String[] strs = {"java8", "is", "easy", "to", "use"};
+
+        // map和flatmap
+        List<String[]> collect = Arrays.stream(strs).map(s -> s.split("")).distinct().toList();
+        collect.forEach(c -> System.out.println(Arrays.toString(c)));
+        System.out.println("======");
+        List<String> strings = Arrays.stream(strs).map(s -> s.split("")).flatMap(Arrays::stream).distinct().toList();
+        System.out.println(strings);
     }
 
 }
