@@ -1,8 +1,12 @@
 package com.example.streamtest;
 
+import java.io.File;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 public class StreamOperate {
 
@@ -48,6 +52,7 @@ public class StreamOperate {
 
         return filterApples;
     }
+
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(-1, 2, 3, 4, 5);
 
@@ -63,7 +68,9 @@ public class StreamOperate {
         List<String> strings = Arrays.stream(strs).map(s -> s.split("")).flatMap(Arrays::stream).distinct().toList();
         System.out.println(strings);
 
-        //Stream.generate(()->UUID.randomUUID().toString()).toList().forEach(System.out::println);
+        // 无限生成 Stream是懒加载的 直到被使用时才会执行
+        //Stream<String> generate = Stream.generate(() -> UUID.randomUUID().toString());
+        //generate.forEach(System.out::println);
 
         List<Apple> apples = Arrays.asList(
                 Apple.builder().id(1).color(Apple.Color.GREEN).origin("JS1").weight(1.5f).build(),
@@ -72,9 +79,86 @@ public class StreamOperate {
         );
 
         List<Apple> apples1 = filterApplesByAppleFilter(apples,
-                apple -> apple.getColor().equals(Apple.Color.GREEN)&&apple.getOrigin().equals("js"));
+                apple -> apple.getColor().equals(Apple.Color.GREEN) && apple.getOrigin().equals("js"));
         System.out.println(apples1);
 
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        // 不执行
+        Arrays.stream(arr).peek(System.out::println);
+        System.out.println(IntStream.of(1, 2, 3, 4)
+                .filter(e -> e > 2)
+                .peek(e -> System.out.println("Filtered value: " + e))
+                .map(e -> e * e)
+                .peek(e -> System.out.println("Mapped value: " + e))
+                .sum());
+
+
+        List<Integer> numbers3 = Arrays.asList(1, 2, 3, 4, 5);
+
+        Stream<Integer> stream = numbers3.stream().map(n -> n / 0).filter(n -> n % 2 == 0);
+
+        // Internal iteration, using new default method Iterable#forEach(Consumer<? super T> action)
+        List<String> list =
+                Arrays.asList("Apple", "Orange", "Banana");
+        //using lambda expression
+        list.forEach(s -> System.out.println(s));
+        //or using method reference on System.out instance
+        list.forEach(System.out::println);
+
+        // Counting even numbers in a list, using Collection#stream() and java.util.stream.Stream
+        List<Integer> list2 =
+                Arrays.asList(3, 2, 12, 5, 6, 11, 13);
+        long count = list2.stream()
+                .filter(i -> i % 2 == 0)
+                .count();
+        System.out.println(count);
+
+        // Retrieving even number list
+        List<Integer> list3 =
+                Arrays.asList(3, 2, 12, 5, 6, 11, 13);
+        List<Integer> evenList =
+                list3.stream()
+                        .filter(i -> i % 2 == 0)
+                        .collect(Collectors.toList());
+        System.out.println(evenList);
+        // Or if we are only interested in printing:
+        List<Integer> list4 =
+                Arrays.asList(3, 2, 12, 5, 6, 11, 13);
+        list4.stream().filter(i -> i % 2 == 0)
+                .forEach(System.out::println);
+
+        // Finding sum of all even numbers
+        List<Integer> list5 =
+                Arrays.asList(3, 2, 12, 5, 6, 11, 13);
+        int sum = list5.stream()
+                .filter(i -> i % 2 == 0)
+                .mapToInt(Integer::intValue)
+                .sum();
+        System.out.println(sum);
+        // Alternatively
+        List<Integer> list6 =
+                Arrays.asList(3, 2, 12, 5, 6, 11, 13);
+        int sum2 = list6.stream()
+                .filter(i -> i % 2 == 0)
+                .reduce(0, (i, c) -> i + c);
+        System.out.println(sum2);
+
+        // Finding whether all integers are less than 10 in the list
+        // Also look at Stream#anyMatch(...) method
+        List<Integer> list7 =
+                Arrays.asList(3, 2, 12, 5, 6, 11, 13);
+        boolean b = list7.stream()
+                .allMatch(i -> i < 10);
+        System.out.println(b);
+
+        // Finding all sub-directory names in a directory. Using new static methods, Arrays#stream(T[] array)
+        List<String> allDirNames =
+                Arrays.stream(new File("C:\\")
+                                .listFiles())
+                        .filter(File::isDirectory)
+                        .map(File::getName)
+                        .collect(Collectors.toList());
+        System.out.println(allDirNames);
     }
 
 }
