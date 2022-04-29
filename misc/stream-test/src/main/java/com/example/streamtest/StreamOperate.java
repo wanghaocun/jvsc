@@ -69,8 +69,10 @@ public class StreamOperate {
         System.out.println(strings);
 
         // 无限生成 Stream是懒加载的 直到被使用时才会执行
-        //Stream<String> generate = Stream.generate(() -> UUID.randomUUID().toString());
-        //generate.forEach(System.out::println);
+        Stream<String> generate = Stream.generate(() -> UUID.randomUUID().toString()).limit(5);
+        generate.forEach(System.out::println);
+        Stream<Double> generate2 = Stream.generate(Math::random).limit(5);
+        System.out.println(generate2.collect(Collectors.toList()));
 
         List<Apple> apples = Arrays.asList(
                 Apple.builder().id(1).color(Apple.Color.GREEN).origin("JS1").weight(1.5f).build(),
@@ -79,7 +81,7 @@ public class StreamOperate {
         );
 
         List<Apple> apples1 = filterApplesByAppleFilter(apples,
-                apple -> apple.getColor().equals(Apple.Color.GREEN) && apple.getOrigin().equals("js"));
+                apple -> apple.getColor().equals(Apple.Color.GREEN) && apple.getOrigin().equals("JS1"));
         System.out.println(apples1);
 
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
