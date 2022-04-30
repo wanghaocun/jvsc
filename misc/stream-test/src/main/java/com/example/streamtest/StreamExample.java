@@ -114,6 +114,8 @@ public class StreamExample {
                 (key1, key2) -> key2));
         System.out.println(taskMap3);
 
+        System.out.println(Integer.MAX_VALUE);
+        // 并行流  根据机器的物理核数分配线程数 当数据量不大时 不会分配很多线程
         Map<String, List<Integer>> numbersPerThread = IntStream.rangeClosed(1, 16000000)
                 .parallel()
                 .boxed()
@@ -121,6 +123,5 @@ public class StreamExample {
         numbersPerThread.forEach((k, v) -> System.out.printf("%s >> %s%n", k, v));
         System.out.println(numbersPerThread.keySet().size());
     }
-
 
 }
