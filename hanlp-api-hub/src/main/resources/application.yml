@@ -1,0 +1,47 @@
+# Global environment configuration
+server:
+  port: 9901
+  servlet:
+    context-path: /lianzhu/hanlphub
+
+spring:
+  main:
+    banner-mode: console
+  profiles:
+    active: dev
+
+---
+
+# Development environment configuration
+spring:
+  profiles: dev
+  redis:
+    host: 127.0.0.1
+    port: 16379
+    password: Wanghc@2020
+    database: 1
+
+logging:
+  level:
+    com:
+      lianzhu:
+        hanlphub:
+          service: debug
+
+---
+
+# Production environment configuration
+spring:
+  profiles: prod
+  redis:
+    host: 127.0.0.1
+    port: 26379
+    password: Lianzhu@2020
+    database: 9
+
+logging:
+  level:
+    com:
+      lianzhu:
+        hanlphub:
+          service: warn
