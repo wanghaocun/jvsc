@@ -1,0 +1,15 @@
+spring:
+  redis:
+    host: vvv.wanghaocun.com
+    port: 6379
+    password: vvv.wanghaocun.com
+  datasource:
+    url: jdbc:mysql://vvv.wanghaocun.com:3306/dev
+    username: root
+    password: vvv.wanghaocun.com
+  jpa:
+    show-sql: true
+  cache:
+    redis:
+      time-to-live: 3600000
+
