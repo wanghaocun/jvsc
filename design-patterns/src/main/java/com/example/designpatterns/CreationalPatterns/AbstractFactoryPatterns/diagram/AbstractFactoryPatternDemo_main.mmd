@@ -1,0 +1,96 @@
+```mermaid
+sequenceDiagram
+actor User
+User ->> AbstractFactoryPatternDemo : main
+activate AbstractFactoryPatternDemo
+AbstractFactoryPatternDemo ->> FactoryProducer : getFactory
+activate FactoryProducer
+FactoryProducer ->> FactoryType : contains
+activate FactoryType
+FactoryType -->> FactoryProducer : #32; 
+deactivate FactoryType
+FactoryProducer -->> AbstractFactoryPatternDemo : #32; 
+deactivate FactoryProducer
+AbstractFactoryPatternDemo ->> AbstractFactory : getShape
+activate AbstractFactory
+AbstractFactory -->> AbstractFactoryPatternDemo : #32; 
+deactivate AbstractFactory
+AbstractFactoryPatternDemo ->> Shape : draw
+activate Shape
+Shape -->> AbstractFactoryPatternDemo : #32; 
+deactivate Shape
+AbstractFactoryPatternDemo ->> AbstractFactory : getShape
+activate AbstractFactory
+AbstractFactory -->> AbstractFactoryPatternDemo : #32; 
+deactivate AbstractFactory
+AbstractFactoryPatternDemo ->> Shape : draw
+activate Shape
+Shape -->> AbstractFactoryPatternDemo : #32; 
+deactivate Shape
+AbstractFactoryPatternDemo ->> AbstractFactory : getShape
+activate AbstractFactory
+AbstractFactory -->> AbstractFactoryPatternDemo : #32; 
+deactivate AbstractFactory
+AbstractFactoryPatternDemo ->> Shape : draw
+activate Shape
+Shape -->> AbstractFactoryPatternDemo : #32; 
+deactivate Shape
+AbstractFactoryPatternDemo ->> FactoryProducer : getFactory
+activate FactoryProducer
+FactoryProducer ->> FactoryType : contains
+activate FactoryType
+FactoryType -->> FactoryProducer : #32; 
+deactivate FactoryType
+FactoryProducer -->> AbstractFactoryPatternDemo : #32; 
+deactivate FactoryProducer
+AbstractFactoryPatternDemo ->> AbstractFactory : getColor
+activate AbstractFactory
+AbstractFactory -->> AbstractFactoryPatternDemo : #32; 
+deactivate AbstractFactory
+AbstractFactoryPatternDemo ->> Color : fill
+activate Color
+Color -->> AbstractFactoryPatternDemo : #32; 
+deactivate Color
+AbstractFactoryPatternDemo ->> AbstractFactory : getColor
+activate AbstractFactory
+AbstractFactory -->> AbstractFactoryPatternDemo : #32; 
+deactivate AbstractFactory
+AbstractFactoryPatternDemo ->> Color : fill
+activate Color
+Color -->> AbstractFactoryPatternDemo : #32; 
+deactivate Color
+AbstractFactoryPatternDemo ->> AbstractFactory : getColor
+activate AbstractFactory
+AbstractFactory -->> AbstractFactoryPatternDemo : #32; 
+deactivate AbstractFactory
+AbstractFactoryPatternDemo ->> Color : fill
+activate Color
+Color -->> AbstractFactoryPatternDemo : #32; 
+deactivate Color
+AbstractFactoryPatternDemo ->> FactoryProducer : getFactory
+activate FactoryProducer
+FactoryProducer ->> FactoryType : contains
+activate FactoryType
+FactoryType -->> FactoryProducer : #32; 
+deactivate FactoryType
+FactoryProducer -->> AbstractFactoryPatternDemo : #32; 
+deactivate FactoryProducer
+AbstractFactoryPatternDemo ->> AbstractFactory : getColor
+activate AbstractFactory
+AbstractFactory -->> AbstractFactoryPatternDemo : #32; 
+deactivate AbstractFactory
+AbstractFactoryPatternDemo ->> Color : fill
+activate Color
+Color -->> AbstractFactoryPatternDemo : #32; 
+deactivate Color
+AbstractFactoryPatternDemo ->> AbstractFactory : getShape
+activate AbstractFactory
+AbstractFactory -->> AbstractFactoryPatternDemo : #32; 
+deactivate AbstractFactory
+AbstractFactoryPatternDemo ->> Shape : draw
+activate Shape
+Shape -->> AbstractFactoryPatternDemo : #32; 
+deactivate Shape
+deactivate AbstractFactoryPatternDemo
+```
+
