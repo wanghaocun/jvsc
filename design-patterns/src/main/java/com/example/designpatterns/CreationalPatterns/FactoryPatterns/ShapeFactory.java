@@ -1,6 +1,7 @@
 package com.example.designpatterns.CreationalPatterns.FactoryPatterns;
 
-import org.springframework.lang.NonNull;
+import com.example.designpatterns.CreationalPatterns.AbstractFactoryPatterns.AbstractFactory;
+import com.example.designpatterns.CreationalPatterns.AbstractFactoryPatterns.Color;
 
 import java.util.Objects;
 
@@ -8,11 +9,17 @@ import java.util.Objects;
  * @author wanghaocun
  * @since 2022-05-01
  **/
-public class ShapeFactory {
+public class ShapeFactory extends AbstractFactory {
 
-    // 使用 getShape 方法获取形状的对象
-    public Shape getShape(@NonNull String shapeType) {
-         shapeType = Objects.requireNonNullElse(shapeType, "null");
+    /**
+     * 使用 getShape 方法获取形状的对象
+     *
+     * @param shapeType String
+     * @return Shape
+     */
+    @Override
+    public Shape getShape(String shapeType) {
+        shapeType = Objects.requireNonNullElse(shapeType, "null");
         //Assert.isTrue(ShapeType.contains(shapeType.toUpperCase()), ()->String.format("shape [%s] invalid",shapeType));
 
         if (ShapeType.contains(shapeType.toUpperCase())) {
@@ -27,6 +34,11 @@ public class ShapeFactory {
             System.out.printf("shape [%s] invalid%n", shapeType);
         }
 
+        return null;
+    }
+
+    @Override
+    public Color getColor(String color) {
         return null;
     }
 
