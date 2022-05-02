@@ -26,7 +26,7 @@ public enum ShapeType {
      */
     public static boolean contains(String name) {
         for (ShapeType value : ShapeType.values()) {
-            if (value.name().equals(name)) {
+            if (value.name().equalsIgnoreCase(name)) {
                 return true;
             }
         }
