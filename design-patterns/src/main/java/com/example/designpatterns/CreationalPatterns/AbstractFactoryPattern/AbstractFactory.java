@@ -1,6 +1,6 @@
-package com.example.designpatterns.CreationalPatterns.AbstractFactoryPatterns;
+package com.example.designpatterns.CreationalPatterns.AbstractFactoryPattern;
 
-import com.example.designpatterns.CreationalPatterns.FactoryPatterns.Shape;
+import com.example.designpatterns.CreationalPatterns.FactoryPattern.Shape;
 
 /**
  * @author wanghaocun

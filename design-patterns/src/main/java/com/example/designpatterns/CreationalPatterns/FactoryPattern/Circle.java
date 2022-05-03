@@ -1,4 +1,4 @@
-package com.example.designpatterns.CreationalPatterns.FactoryPatterns;
+package com.example.designpatterns.CreationalPatterns.FactoryPattern;
 
 /**
  * @author wanghaocun

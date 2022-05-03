@@ -1,6 +1,6 @@
-package com.example.designpatterns.CreationalPatterns.AbstractFactoryPatterns;
+package com.example.designpatterns.CreationalPatterns.AbstractFactoryPattern;
 
-import com.example.designpatterns.CreationalPatterns.FactoryPatterns.ShapeFactory;
+import com.example.designpatterns.CreationalPatterns.FactoryPattern.ShapeFactory;
 
 import java.util.Objects;
 

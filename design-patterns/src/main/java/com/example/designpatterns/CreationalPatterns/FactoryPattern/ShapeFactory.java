@@ -1,7 +1,7 @@
-package com.example.designpatterns.CreationalPatterns.FactoryPatterns;
+package com.example.designpatterns.CreationalPatterns.FactoryPattern;
 
-import com.example.designpatterns.CreationalPatterns.AbstractFactoryPatterns.AbstractFactory;
-import com.example.designpatterns.CreationalPatterns.AbstractFactoryPatterns.Color;
+import com.example.designpatterns.CreationalPatterns.AbstractFactoryPattern.AbstractFactory;
+import com.example.designpatterns.CreationalPatterns.AbstractFactoryPattern.Color;
 
 import java.util.Objects;
 
