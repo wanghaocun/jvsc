@@ -8,6 +8,10 @@ package com.example.designpatterns.CreationalPatterns.SigletonPattern;
  * 而且枚举类型是所用单例实现中唯一一种不会被破坏的单例实现模式。
  * <p>
  * 在实现过程中，**Java虚拟机会保证枚举类型不能被反射并且构造函数只被执行一次**。
+ * <p>
+ * Google 首席 Java 架构师、《Effective Java》一书作者、
+ * Java集合框架的开创者Joshua Bloch在《Effective Java》一书中提到：
+ * ***单元素的枚举类型已经成为实现Singleton的最佳方法。***
  *
  * @author wanghaocun
  * @since 2022-05-03
@@ -44,7 +48,7 @@ public class EnumerationSingleton {
     private enum SingletonEnum {
 
         /**
-         * 枚举实例
+         * 单元素
          */
         INSTANCE;
 
