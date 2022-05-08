@@ -6,6 +6,6 @@ package com.example.designpatterns.StructuralPatterns.AdapterPattern;
  */
 public interface MediaPlayer {
 
-    public void play(String audioType, String fileName);
+    void play(String audioType, String fileName);
    
 }
