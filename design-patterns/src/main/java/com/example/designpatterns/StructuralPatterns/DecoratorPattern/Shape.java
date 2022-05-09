@@ -5,6 +5,6 @@ package com.example.designpatterns.StructuralPatterns.DecoratorPattern;
  */
 public interface Shape {
 
-   void draw();
+    void draw();
 
 }
