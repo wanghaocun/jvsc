@@ -2,7 +2,6 @@ package com.example.designpatterns.StructuralPatterns.CompositePattern;
 
 /**
  * @author wanghc
- * @date 2022-5-9
  */
 public class CompositePatternDemo {
 
