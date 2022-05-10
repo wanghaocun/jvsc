@@ -2,6 +2,9 @@ package com.example.designpatterns.StructuralPatterns.FlyweightPattern;
 
 import java.util.HashMap;
 
+/**
+ * @author wanghc
+ */
 public class ShapeFactory {
 
     private static final HashMap<String, Shape> circleMap = new HashMap<>();

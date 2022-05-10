@@ -1,5 +1,8 @@
 package com.example.designpatterns.StructuralPatterns.FlyweightPattern;
 
+/**
+ * @author wanghc
+ */
 public class Circle implements Shape {
 
     private final String color;
