@@ -1,5 +1,7 @@
 package com.example.designpatterns.BehavioralPatterns.ChainOfResponsibilityPattern;
 
+import java.util.Random;
+
 /**
  * @author wanghc
  */
@@ -25,6 +27,7 @@ public class ChainPatternDemo {
         loggerChain.logMessage(AbstractLogger.DEBUG, "This is a debug level information.");
 
         loggerChain.logMessage(AbstractLogger.ERROR, "This is an error information.");
+
     }
 
 }
