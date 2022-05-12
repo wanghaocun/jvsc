@@ -5,6 +5,7 @@ import lombok.Data;
 /**
  * @author wanghc
  * @date 2022-05-12
+ * {@link} <a href="https://segmentfault.com/a/1190000016773324">ref</a>
  **/
 public class PassByValue {
 
