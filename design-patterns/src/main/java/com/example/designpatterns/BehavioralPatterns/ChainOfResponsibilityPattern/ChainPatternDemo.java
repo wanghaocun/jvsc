@@ -1,7 +1,5 @@
 package com.example.designpatterns.BehavioralPatterns.ChainOfResponsibilityPattern;
 
-import java.util.Random;
-
 /**
  * @author wanghc
  */
@@ -20,6 +18,7 @@ public class ChainPatternDemo {
     }
 
     public static void main(String[] args) {
+
         AbstractLogger loggerChain = getChainOfLoggers();
 
         loggerChain.logMessage(AbstractLogger.INFO, "This is an information.");
