@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wanghaocun</groupId>
+    <artifactId>jvsc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>jvsc</name>
+    <description>The parent module of the repo</description>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <modules>
+
+        <module>spring-boot-cache</module>
+        <module>redis-distr-lock-demo</module>
+        <module>rabbit-demo</module>
+        <module>mq-rpc/client</module>
+        <module>mq-rpc/server</module>
+        <module>hanlp-api-hub</module>
+        <module>java-core</module>
+        <module>java-stream</module>
+        <module>design-patterns</module>
+
+    </modules>
+</project>
