@@ -28,6 +28,7 @@
         <module>java-core</module>
         <module>java-stream</module>
         <module>design-patterns</module>
+        <module>xxl-job-demo</module>
 
     </modules>
 </project>
