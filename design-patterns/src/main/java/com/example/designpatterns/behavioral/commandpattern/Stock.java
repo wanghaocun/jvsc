@@ -1,19 +1,22 @@
 package com.example.designpatterns.behavioral.commandpattern;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author wanghc
  */
+@Slf4j
 public class Stock {
 
-    private final String name = "ABC";
-    private final int quantity = 10;
+    private static final String NAME = "ABC";
+    private static final int QUANTITY = 10;
 
     public void buy() {
-        System.out.println("Stock [ Name: " + name + ",Quantity:" + quantity + " ]bought ");
+        log.info("Stock [ Name: " + NAME + ",Quantity:" + QUANTITY + " ]bought ");
     }
 
     public void sell() {
-        System.out.println("Stock [ Name: " + name + ",Quantity:" + quantity + " ]sold ");
+        log.info("Stock [ Name: " + NAME + ",Quantity:" + QUANTITY + " ]sold ");
     }
 
 }
