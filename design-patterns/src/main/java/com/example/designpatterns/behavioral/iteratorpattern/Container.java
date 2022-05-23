@@ -5,6 +5,6 @@ package com.example.designpatterns.behavioral.iteratorpattern;
  */
 public interface Container {
 
-    public Iterator getIterator();
+    Iterator getIterator();
 
 }
