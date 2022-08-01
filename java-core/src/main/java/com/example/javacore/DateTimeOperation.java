@@ -2,6 +2,7 @@ package com.example.javacore;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -67,18 +68,17 @@ public class DateTimeOperation {
          * K：和hh差不多，表示一天12小时制(0-11)。
          * z：表示时区
          */
-        StringBuilder sb = new StringBuilder();
-        sb.append("yyyy年MM月dd日 HH:mm:ss")
-                .append(" 上下午标志 a")
-                .append(" E")
-                .append(" 一年中的第D天")
+        String sb = "yyyy年MM月dd日 HH:mm:ss" +
+                " 上下午标志 a" +
+                " E" +
+                " 一年中的第D天" +
                 // F这个出来的结果，不靠谱 还是后面的那个W靠谱。
-                .append(" 一月中的第F个星期")
-                .append(" 一年中的第w个星期")
-                .append(" 一月中的第W个星期")
-                .append(" Z")
-                .append(" z");
-        SimpleDateFormat sdf = new SimpleDateFormat(sb.toString());
+                " 一月中的第F个星期" +
+                " 一年中的第w个星期" +
+                " 一月中的第W个星期" +
+                " Z" +
+                " z";
+        SimpleDateFormat sdf = new SimpleDateFormat(sb);
         String dateString = sdf.format(new Date());
         System.out.println(dateString);
 
@@ -105,6 +105,13 @@ public class DateTimeOperation {
         time = format1.format(ss.getTime());
         System.out.println("格式化结果1：" + time);
 
+        // UTC时间转换为本地时间
+        String str = "2022-08-01T07:35:23.310145928Z";
+        DateTimeFormatter utcTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSSSSS'Z'");
+        DateTimeFormatter commonFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime localDateTime = LocalDateTime.parse(str, utcTimeFormatter);
+        System.out.println(localDateTime);
+        System.out.println(commonFormatter.format(localDateTime.plus(Duration.ofHours(8))));
     }
 
 }
