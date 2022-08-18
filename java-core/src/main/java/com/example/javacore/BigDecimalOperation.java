@@ -41,7 +41,7 @@ public class BigDecimalOperation {
 
         System.out.println("result1-->" + a * b);  // result1-->4.1541483776749997E9
 
-        BigDecimal a1 = new BigDecimal(a);
+        BigDecimal a1 = BigDecimal.valueOf(a);
         BigDecimal b11 = new BigDecimal(b);
 
         System.out.println("result2-->" + a1.multiply(b11));//result2-->4154148377.674999891481619无限不循环
