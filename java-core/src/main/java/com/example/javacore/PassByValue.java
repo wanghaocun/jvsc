@@ -4,7 +4,6 @@ import lombok.Data;
 
 /**
  * @author wanghc
- * @date 2022-05-12
  * {@link} <a href="https://segmentfault.com/a/1190000016773324">ref</a>
  * {@link} <a href="https://www.journaldev.com/3884/java-is-pass-by-value-and-not-pass-by-reference">ref</a>
  **/
@@ -16,12 +15,14 @@ public class PassByValue {
         private int age;
     }
 
+    @SuppressWarnings("unused")
     public static void PersonCrossTest1(Person person) {
         System.out.println("传入的person的name：" + person.getName());
         person.setName("我是张小龙");
         System.out.println("方法内重新赋值后的name：" + person.getName());
     }
 
+    @SuppressWarnings("unused")
     static void PersonCrossTest2(Person person) {
         System.out.println("传入的person的name：" + person.getName());
         // 加多此行代码
