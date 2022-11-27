@@ -4,8 +4,9 @@ import lombok.Data;
 
 /**
  * @author wanghc
- * {@link} <a href="https://segmentfault.com/a/1190000016773324">ref</a>
- * {@link} <a href="https://www.journaldev.com/3884/java-is-pass-by-value-and-not-pass-by-reference">ref</a>
+ * @link <a href="https://www.digitalocean.com/blog/journaldev-joins-digitalocean">JournalDev joins DigitalOcean</a>
+ * @see <a href="https://www.journaldev.com/3884/java-is-pass-by-value-and-not-pass-by-reference">ref</a>
+ * @see <a href="https://segmentfault.com/a/1190000016773324">ref</a>
  **/
 public class PassByValue {
 
